@@ -12,21 +12,19 @@
 \usepackage{float}
 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-%\begin{document}
+
+\usepackage{titlesec}
+
+
+% elimina newline despues de \section:
+\titleformat{\section}[runin]
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
 
 \headsep17mm
 \topmargin-1cm
 \hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
 1.5cm \evensidemargin 1.5cm \textheight 22.5cm
-
-\newcommand{\coef}[2]{\left( \begin{array}{c} #1 \\ #2 \end{array}\right)}
-\newcommand{\atr}{\hspace{-0,12cm}}
-%\newcommand{\atrs}{\hspace{-0,1cm}}
-
-\newcounter{cuent}
-\newcommand{\proba}[1]{\stepcounter{cuent}{\alph{cuent})\quad}
-\displaystyle#1\qquad}
-\newcommand{\cuento}{\setcounter{cuent}{0}}
 
 \begin{document}
 \noindent {\bf Universidad de la Rep\'{u}blica} \hfill
@@ -41,9 +39,11 @@
 
 \vspace{0,3cm}
 
-\section*{2.1.j}
+\section*{2.1.j}\emph{Calcular las raices de $P(x) = x^4-x^2-2$}
 
-\emph{Calcular las raices de $P(x) = x^4-x^2-2$}
+
+\noindent
+\emph{Solución:}
 
 
 \noindent
@@ -72,10 +72,16 @@ obtenemos
 $x_3 = \sqrt{2} i$, y $x_4 = -\sqrt{2} i$
 
 \section*{3.2.j}
-Determinar para qué valores de $x$ es cierta la siguiente inecuaci\'on:
+\emph{Determinar para qué valores de $x$ es cierta la siguiente inecuaci\'on:}
+
 \begin{equation*}
   \vert 2x - 5 \vert  <  \vert 3x + 4 \vert
 \end{equation*}
+
+
+
+\noindent
+\emph{Solución:}
 
 \noindent
 Recordemos la definición de valor absoluto:
@@ -91,21 +97,26 @@ Recordemos la definición de valor absoluto:
 Observemos que esta función está definida por tramos
 \footnote{https://en.wikipedia.org/wiki/Piecewise},
 la expresión algebraica depende del signo de $x$.
-Para decidir cuánto vale $|2x - 5|$, estudiamos el signo de $2x-5$.
+Para decidir cuanto vale $|2x - 5|$, estudiamos el signo de $2x-5$.
 Si $2x-5>0$ entonces $|2x-5| = 2x-5$. De lo contrario $|2x-5| = -2x+5$,
 el opuesto. Análogamente, razonamos para $ 3x+4$.
-El dominio nos queda dividido en tres segmentos:
+
+\begin{center}
+\includegraphics[width=100mm]{signo}
+\end{center}
+
+El dominio nos queda dividido entonces en tres segmentos:
 \begin{enumerate}
 \item
-  Si $x \in (-\infty, \frac{-4}{3})$ tenemos que $|2x-5| = 2x+5$ y que
+  Si $x \in (-\infty, \frac{-4}{3})$ tenemos que $|2x-5| = -2x+5$ y que
   $|3x+4| = -3x-4$.
-  La ecuación a estudiar en este intervalo es $ 5-2x < -3x-4$.
+  La ecuación a estudiar en este intervalo es $ -2x+5 < -3x-4$.
   Reduciendo:
   \begin{align*}
-    5-2x  <& -3x-4&\\
-    \iff 5 + 4 <& -3x + 2x& \\
-    \iff 9 <& -x & \\
-    \iff x < -9
+    -2x+5 <& -3x-4    & \iff \\
+    5 + 4 <& -3x + 2x & \iff \\
+    9     <& -x       & \iff \\
+    x     <& -9 &
   \end{align*}
 
   La solución obtenida {\bf solo tiene sentido en la región estudiada},
@@ -147,17 +158,19 @@ El dominio nos queda dividido en tres segmentos:
      x >& -9 \\
   \end{align*}
 
-  Por tanto \emph{en la región} la solución es
+  \noindent
+  Por tanto en la región la solución es
   $\{ x\in \mathbb{R} : x > -9 \}$, y aporta a la solución total al conjunto
-  $\{ x\in \mathbb{R} : x > -9 \} \cap [\frac{5}{2},\infty)
-    = [\frac{5}{2},\infty)$
+  $\{ x\in \mathbb{R} : x > -9 \} \cap [\frac{5}{2},+\infty)
+    = [\frac{5}{2},+\infty)$
   
 \end{enumerate}
 
 Finalmente, el conjunto solución está dado por la unión de las soluciones
-de cada intervalo, y es el conjunto
-$$(-\infty, -9) \cup (\frac{1}{5}, \frac{5}{2}) \cup [\frac{5}{2},\infty)
-  = (-\infty, -9) \cup (\frac{1}{5}, \infty)$$.
+de cada intervalo, y es el conjunto:
+
+$$(-\infty, -9) \cup (\frac{1}{5}, \frac{5}{2}) \cup [\frac{5}{2},+\infty)
+  = (-\infty, -9) \cup (\frac{1}{5}, +\infty)$$
 
 
 
