@@ -67,17 +67,18 @@ Luego, encontramos los $x$ para los cuales $u$ toma esos valores.
 Es decir, resolvemos las ecuaciones $x^2 = u_i$
 para obtener las raices de $P(x)$.
 De $x^2=1$ obtenemos $x_1=-1$, $x_2 = 1$. De $x^2=-2$ no se obtienen nuevas
-raices reales. Si estamos trabajando en el cuerpo de los complejos, obtenemos
+raices reales. Si estamos trabajando en el cuerpo de los complejos,
+obtenemos
 $x_3 = \sqrt{2} i$, y $x_4 = -\sqrt{2} i$
 
 \section*{3.2.j}
-Determinar para qu\'e valores de $x$ es cierta la siguiente inecuaci\'on:
+Determinar para qué valores de $x$ es cierta la siguiente inecuaci\'on:
 \begin{equation*}
   \vert 2x - 5 \vert  <  \vert 3x + 4 \vert
 \end{equation*}
 
-Observamos que la definici\'on de valor absoluto, depende del signo
-
+\noindent
+Recordemos la definición de valor absoluto:
 \begin{equation*}
   \vert x \vert =
   \begin{cases}
@@ -85,6 +86,79 @@ Observamos que la definici\'on de valor absoluto, depende del signo
    -x & \mbox{si } x < 0
   \end{cases}
 \end{equation*}
+
+\noindent
+Observemos que esta función está definida por tramos
+\footnote{https://en.wikipedia.org/wiki/Piecewise},
+la expresión algebraica depende del signo de $x$.
+Para decidir cuánto vale $|2x - 5|$, estudiamos el signo de $2x-5$.
+Si $2x-5>0$ entonces $|2x-5| = 2x-5$. De lo contrario $|2x-5| = -2x+5$,
+el opuesto. Análogamente, razonamos para $ 3x+4$.
+El dominio nos queda dividido en tres segmentos:
+\begin{enumerate}
+\item
+  Si $x \in (-\infty, \frac{-4}{3})$ tenemos que $|2x-5| = 2x+5$ y que
+  $|3x+4| = -3x-4$.
+  La ecuación a estudiar en este intervalo es $ 5-2x < -3x-4$.
+  Reduciendo:
+  \begin{align*}
+    5-2x  <& -3x-4&\\
+    \iff 5 + 4 <& -3x + 2x& \\
+    \iff 9 <& -x & \\
+    \iff x < -9
+  \end{align*}
+
+  La solución obtenida {\bf solo tiene sentido en la región estudiada},
+  por tanto para la solución final nos interesa el conjunto
+  $(-\infty, -9) \cap (-\infty, \frac{-4}{3}) = (-\infty, -9)$.
+  (La solución obtenida, intersección la región estudiada, en este caso da
+  lo mismo).
+  
+\item
+  Si $x \in [\frac{-4}{3}, \frac{5}{2})$ tenemos que $|2x-5| = -2x+5$ y que
+  $|3x+4| = 3x+4$.
+  La ecuación a estudiar en este intervalo es $ -2x+5 < 3x+4$.
+  Reduciendo:
+  \begin{align*}
+    -2x+5  <& 3x+4     & \iff \\
+     5 - 4 <& 3x + 2 x & \iff \\
+     1     <& 5x       & \iff \\
+     x     >& \frac{1}{5} &\\
+  \end{align*}
+
+  Por tanto {\bf en la región} la solución es
+  $\{ x\in \mathbb{R} : x > \frac{1}{5}\}$, y aporta a la solución total
+  al conjunto
+  $\{ x\in \mathbb{R} : x > \frac{1}{5}\} \cap [\frac{-4}{3}, \frac{5}{2})
+  = (\frac{1}{5}, \frac{5}{2})$.
+
+  (Una vez más es la solución obtenida, intersección la región estudiada,
+  en este caso queda clara la diferencia).
+  
+
+\item
+  Si $x \in [\frac{5}{2},\infty)$ tenemos que $|2x-5| = 2x-5$ y que
+  $|3x+4| = 3x+4$.
+  La ecuación a estudiar en este intervalo es $ 2x-5 < 3x+4$.
+  Reduciendo:
+  \begin{align*}
+    2x-5  <& 3x+4       & \iff \\
+     -5 - 4 <& 3x - 2 x & \iff \\
+     x >& -9 \\
+  \end{align*}
+
+  Por tanto \emph{en la región} la solución es
+  $\{ x\in \mathbb{R} : x > -9 \}$, y aporta a la solución total al conjunto
+  $\{ x\in \mathbb{R} : x > -9 \} \cap [\frac{5}{2},\infty)
+    = [\frac{5}{2},\infty)$
+  
+\end{enumerate}
+
+Finalmente, el conjunto solución está dado por la unión de las soluciones
+de cada intervalo, y es el conjunto
+$$(-\infty, -9) \cup (\frac{1}{5}, \frac{5}{2}) \cup [\frac{5}{2},\infty)
+  = (-\infty, -9) \cup (\frac{1}{5}, \infty)$$.
+
 
 
 
