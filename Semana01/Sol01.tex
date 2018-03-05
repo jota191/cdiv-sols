@@ -27,14 +27,11 @@
 1.5cm \evensidemargin 1.5cm \textheight 22.5cm
 
 \begin{document}
-\noindent {\bf Universidad de la Rep\'{u}blica} \hfill
-          {\bf C\'{a}lculo diferencial e integral en una variable} \\
-{\bf Facultad de Ingenier\'{\i}a - IMERL} \hfill {\bf Primer semestre 2018}
 
 \vspace{0,3cm}
 
 \begin{center}
-{\bf \Large Soluciones seleccionadas, Semana 01}
+{\bf \Large Resoluciones seleccionadas, semana 01}
 \end{center}
 
 \vspace{0,3cm}
@@ -51,7 +48,7 @@ Los polinomios de esta forma (grado 4 con coeficientes en la primer y tercer
 potencia nulos) pueden transformarse y resolverse como si fuesen de segundo
 grado.
 Consideramos el cambio de variable
-$u := x^2$. El polinomio queda $P(x) = u^2-u-2$,
+$u := x^2$. El polinomio queda $P(x) = Q(u) = u^2-u-2$,
 cuyas raices (en función de $u$), aplicando la f\'ormula
 de Bhaskara son:
 
@@ -69,7 +66,11 @@ para obtener las raices de $P(x)$.
 De $x^2=1$ obtenemos $x_1=-1$, $x_2 = 1$. De $x^2=-2$ no se obtienen nuevas
 raices reales. Si estamos trabajando en el cuerpo de los complejos,
 obtenemos
-$x_3 = \sqrt{2} i$, y $x_4 = -\sqrt{2} i$
+$x_3 = \sqrt{2} i$, y $x_4 = -\sqrt{2} i$.
+
+\noindent
+Notar que este procedemiento se puede emular si los exponentes tienen
+un divisor común, por ejemplo para el polinomio $x^{10} - x^{5} - 2$.
 
 \section*{3.2.j}
 \emph{Determinar para qué valores de $x$ es cierta la siguiente inecuaci\'on:}
@@ -98,17 +99,18 @@ Observemos que esta función está definida por tramos
 \footnote{https://en.wikipedia.org/wiki/Piecewise},
 la expresión algebraica depende del signo de $x$.
 Para decidir cuanto vale $|2x - 5|$, estudiamos el signo de $2x-5$.
-Si $2x-5>0$ entonces $|2x-5| = 2x-5$. De lo contrario $|2x-5| = -2x+5$,
+Si $2x-5 \geq 0$ entonces $|2x-5| = 2x-5$. De lo contrario $|2x-5| = -2x+5$,
 el opuesto. Análogamente, razonamos para $ 3x+4$.
 
 \begin{center}
 \includegraphics[width=100mm]{signo}
 \end{center}
 
-El dominio nos queda dividido entonces en tres segmentos:
+El dominio nos queda dividido entonces en tres regiones:
 \begin{enumerate}
 \item
-  Si $x \in (-\infty, \frac{-4}{3})$ tenemos que $|2x-5| = -2x+5$ y que
+  Si $x \in \left(-\infty, \frac{-4}{3}\right)$ tenemos que $|2x-5| = -2x+5$
+  y que
   $|3x+4| = -3x-4$.
   La ecuación a estudiar en este intervalo es $ -2x+5 < -3x-4$.
   Reduciendo:
@@ -121,12 +123,13 @@ El dominio nos queda dividido entonces en tres segmentos:
 
   La solución obtenida {\bf solo tiene sentido en la región estudiada},
   por tanto para la solución final nos interesa el conjunto
-  $(-\infty, -9) \cap (-\infty, \frac{-4}{3}) = (-\infty, -9)$.
+  $$(-\infty, -9) \cap \left(-\infty, \frac{-4}{3}\right) = (-\infty, -9)$$
   (La solución obtenida, intersección la región estudiada, en este caso da
   lo mismo).
   
 \item
-  Si $x \in [\frac{-4}{3}, \frac{5}{2})$ tenemos que $|2x-5| = -2x+5$ y que
+  Si $x \in \left[\frac{-4}{3}, \frac{5}{2}\right)$
+    tenemos que $|2x-5| = -2x+5$ y que
   $|3x+4| = 3x+4$.
   La ecuación a estudiar en este intervalo es $ -2x+5 < 3x+4$.
   Reduciendo:
@@ -138,17 +141,19 @@ El dominio nos queda dividido entonces en tres segmentos:
   \end{align*}
 
   Por tanto {\bf en la región} la solución es
-  $\{ x\in \mathbb{R} : x > \frac{1}{5}\}$, y aporta a la solución total
-  al conjunto
-  $\{ x\in \mathbb{R} : x > \frac{1}{5}\} \cap [\frac{-4}{3}, \frac{5}{2})
-  = (\frac{1}{5}, \frac{5}{2})$.
+  $\left\lbrace x\in \mathbb{R} : x > \frac{1}{5}\right\rbrace$,
+  y aporta a la solución total el conjunto \newline
+  
+  $$\left\lbrace x\in \mathbb{R} : x > \frac{1}{5}\right\rbrace
+  \cap \left[\frac{-4}{3}, \frac{5}{2}\right)
+    = \left(\frac{1}{5}, \frac{5}{2}\right)$$
 
   (Una vez más es la solución obtenida, intersección la región estudiada,
   en este caso queda clara la diferencia).
   
 
 \item
-  Si $x \in [\frac{5}{2},\infty)$ tenemos que $|2x-5| = 2x-5$ y que
+  Si $x \in \left[\frac{5}{2},\infty\right)$ tenemos que $|2x-5| = 2x-5$ y que
   $|3x+4| = 3x+4$.
   La ecuación a estudiar en este intervalo es $ 2x-5 < 3x+4$.
   Reduciendo:
@@ -169,8 +174,9 @@ El dominio nos queda dividido entonces en tres segmentos:
 Finalmente, el conjunto solución está dado por la unión de las soluciones
 de cada intervalo, y es el conjunto:
 
-$$(-\infty, -9) \cup (\frac{1}{5}, \frac{5}{2}) \cup [\frac{5}{2},+\infty)
-  = (-\infty, -9) \cup (\frac{1}{5}, +\infty)$$
+$$(-\infty, -9) \cup \left(\frac{1}{5},
+\frac{5}{2}\right) \cup \left[\frac{5}{2},+\infty\right)
+  = (-\infty, -9) \cup \left(\frac{1}{5}, +\infty\right)$$
 
 
 
