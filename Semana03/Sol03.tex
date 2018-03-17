@@ -52,7 +52,8 @@
   
   Con $n=1$ tenemos $\sum_{i=1}^1 i(i!)=1=(1+1)! -1$.
   \footnote{Nótese que tomamos $1$ como base para no tener el caso
-    de la suma degenerada, pero podíamos comenzar por $0$ perfectamente}
+    de la suma degenerada, pero podíamos comenzar por $0$ perfectamente.
+  En general $\sum_{i=1}^0 f(i) = 0$}
 
 \item Paso inductivo
 
@@ -66,7 +67,7 @@
 \begin{align*}
   \sum_{i=1}^{h+1} i(i!)
   &= \sum_{i=1}^{h} i(i!) + (h+1)(h+1)! &\\
-  &= (h+1)! - 1 + (h+1)(h+1)! {\text{ \{ por hip. \} } } &\\
+  &= (h+1)! - 1 + (h+1)(h+1)! {\text{ (por hipótests) } } &\\
   &= (h+1)! + (h+1)(h+1)! - 1 &\\
   &= (h+2)(h+1)! - 1 &\\
   &= (h+2)! - 1 &\\
@@ -89,7 +90,7 @@
 \begin{itemize}
 \item Paso base:
   
-  Con $n=0$ tenemos triviamlente $(1+x)^0 \geq 1+0x$
+  Con $n=0$ tenemos trivialmente $(1+x)^0 \geq 1+0x$
   (ambas expresiones valen $1$).
   
 \item Paso inductivo
@@ -104,10 +105,10 @@
 \begin{align*}
   (1+x)^{h+1} &= (1+x)^{h+1} &\\
   &=    (1+x)^{h}(1+x) &\\
-  &\geq (1+hx)(1+x) \text{\{ por hipótesis \}}&\\
+  &\geq (1+hx)(1+x) \qquad \text{ (por hipótesis, y porque $1+x>0$)}&\\
   &=    1+hx+x+hx^2 &\\
   &=    1+(h+1)x+hx^2 &\\
-  &\geq 1+(h+1)x \qed &\\
+  &\geq 1+(h+1)x \qed \qquad \text{(porque $hx^2>0$)} &\\
 \end{align*}
   
 \end{itemize}
