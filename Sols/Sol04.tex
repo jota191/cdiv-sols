@@ -1,0 +1,209 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{float}
+\usepackage{enumitem}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{titlesec}
+
+\renewcommand{\o}{\circ}
+\newcommand{\qed}{\blacksquare}
+
+% elimina newline despues de \section:
+\titleformat{\section}[runin]
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}      
+
+
+\headsep17mm
+\topmargin-1cm
+\hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
+1.5cm \evensidemargin 1.5cm \textheight 22.5cm
+
+
+
+
+\begin{document}
+
+\vspace{0,3cm}
+
+\begin{center}
+{\bf \Large Resoluciones seleccionadas, semana 04}
+\end{center}
+
+
+\vspace{0,3cm}
+
+\section*{4.1.9}\emph{}%TODO escribir letra
+
+\noindent
+Recordemos que las siguientes afirmaciones son equivalentes,
+para un conjunto $A \subset \mathbb{R}$:
+
+\begin{enumerate}[label=S-\Roman*)]
+\item $\alpha$ es el supremo de $A$.
+\item $\alpha$ es cota superior de $A$ y
+  $\forall \delta > 0, \: \exists a \in A \:$ tal que
+  $ a \in (\alpha -\delta, \alpha]$ ($ \alpha - a < \delta $.).
+\end{enumerate}
+
+\noindent
+An\'alogamente son equivalentes:
+
+\begin{enumerate}[label=I-\Roman*)]
+\item $\alpha$ es el \'infimo de $A$.
+\item $\alpha$ es cota inferior de $A$ y
+  $\forall \delta > 0, \: \exists s \in A \:$ tal que
+  $ a \in [\alpha, \alpha + \delta)$, ($a - \alpha < \delta$).
+\end{enumerate}
+
+\noindent
+Usualmente ocurre que es m\'as c\'omodo demostrar que un real es supremo o
+\'infimo usando estas condiciones equivalentes a la definici\'on,
+(que se prueban, son teoremas).
+
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item
+    Obs\'ervese que los valores a estudiar est\'an bien definidos. Si $B$
+    est\'a acotado tiene supremo e \'infimo bien definidos (por Axioma de
+    Completitud).
+    Sea $c$ es una cota inferior de $B$, por definición
+    $\forall b \in B, c \leq b$. Pero $\forall a \in A$ tenemos que $a\in B$
+    (por la inclusi\'on $A \subset B$),
+    entonces $c \leq a$ y $c$ es cota inferior de $A$.
+    Análogamente razonamos con los supremos. Por tanto $A$ también está acotado
+    y existen $sup(A)$ e $inf(A)$ por Axioma de Completitud.
+    Pero si toda cota de $B$ es cota de $A$ en particular
+    $inf(B)$ es cota inferior de $A$, por tanto como $inf(A)$ es
+    la mayor de las cotas inferiores, $inf(B) \leq inf(A)$.
+    An\'alogamente deducimos que $sup(A) \leq sup(B)$.
+    Finalmente para demostrar que $inf(A) \leq \sup(A)$ alcanza con considerar
+    $a_0 \in A$ (recordemos que $A$ es no vac\'io por lo que existe $a_0$).
+    Como $inf(A)$ es cota inferior, $inf(A) \leq a_0$.
+    An\'alogamente $a_0 \leq sup(A)$, y por transitividad tenemos
+    lo que quer\'iamos.
+  \item
+    $A= [0,\frac{1}{2}]$, $B = [0,1]$.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \item
+    Por absurdo, supongamos que $sup(A) > inf(B)$. La intuici\'on es que,
+    podemos encontrar un de $a \in A$ tan cercano a
+    $sup (A)$ como queramos,
+    y un $b\in B$ tan cercano a $inf (B)$ como queramos. De forma tal
+    que $b<a$, contradiciendo la hip\'otesis.
+    Formalmente, sea $a \in A$ tal que $sup(A)-a < \frac{sup(A)-inf(B)}{2}$
+    (Por S-II con $\delta = \frac{sup(A)-inf(B)}{2}$).
+    Análogamente consideramos $b\in B$ tal que
+    $b - inf(B)< \frac{sup(A)-inf(B)}{2}$.
+    Sumando miembro a miembro y usando las propiedades de orden:
+
+    $$ \frac{sup(A)-inf(B)}{2} + \frac{sup(A)-inf(B)}{2} =
+    sup(A)-inf(B) >sup(A) - a + b - inf(B) \geq sup(A) - inf(B) + b - a
+    $$
+    \noindent
+    De donde $0 > b-a$ y por tanto $b<a$. Absurdo.
+    El absurdo viene de suponer que $sup(A)> inf(B)$, por tanto
+    $sup(A) \leq \inf(B)$ como quer\'iamos.
+
+  \item
+    $A = [0,1]$, $B=(1,2]$.
+  \end{enumerate}
+\newpage
+\item
+  \begin{enumerate}
+  \item Vamos a demostrar que $inf(A) + inf(B)$ es el \'infimo de $A+B$,
+    usando la condici\'on I-II. El caso del supremo es an\'alogo.
+    Primero probemos que $inf(A)+inf(B)$ es cota inferior de $A+B$.
+    Como $inf(A)$ es cota inferior de $A$, $\forall a \in A$ tenemos que
+    $inf(A) \leq a$ (1). An\'alogamente como $inf(B)$ es cota inferior de $B$,
+    $\forall b \in B$, $inf(B) \leq b$ (2).
+    Sea $x \in B$ se cumple $x = a_x+b_x$ para alg\'un $a_x\in A$, $b_x \in B$.
+    Por tanto 
+    por (1), en particular\footnote{N\'otese que (1) se cumple para {\bf todo} 
+      $a \in A$, por tanto puedo instanciar el teorema para cualquier
+      elemento en particular (por ejemplo$a_x$) }
+    $\inf(A) \leq a_x$ y an\'alogamente
+    $\inf(B) \leq b_x$. Sumando miembro a miembro
+    $\inf(A)+ inf(B) \leq a_x + b_x = x$. Como $x$ era arbitrario,
+    deducimos que $\forall x \in A+B, \: \inf(A)+ inf(B) \leq x$ por lo que
+    $inf(A)+inf(B)$ es una cota inferior, como quer\'iamos.
+    \noindent
+    Por otra parte, para los \'infimos por hip\'otesis
+    se cumple:
+
+    $$\forall \delta>0, \: \exists a \in A \: \text{tal que }
+    \: a_{\delta} - inf(A) < \frac{\delta}{2} $$
+
+    Nótese que elegimos $\frac{\delta}{2}$ para tener $\delta$
+    en la definici\'on
+    final (para $\inf(A+B)$). Podríamos escribir esto con
+    cualquier constante, dado que la desigualdad se cumple para cualquier
+    $\delta>0$.
+
+    Tambi\'en:
+
+    $$\forall \delta>0, \: \exists b \in B \: \text{ tal que }
+    \: b_{\delta} - inf(B) < \frac{\delta}{2} $$
+    
+    Dado $\delta$, construimos $x \in A+B$ eligiendo un par $a_{\delta}$
+    y $b_{\delta}$, siendo $ x= a_{\delta}+ b_{\delta}$. Sumando miembro a miembro:
+
+    $$
+    a_{\delta} - inf(A) + b_{\delta} - inf(B)
+    = a_{\delta} + b_{\delta} - (inf(A) + inf (B))
+    < \frac{\delta}{2} + \frac{\delta}{2}= \delta
+    $$
+
+    Entonces finalmente:
+    $$\forall \delta > 0, \: \exists x \in A+B \: \text{ tal que }
+    \: x_{\delta} - (inf(A)+inf(B)) < \delta $$
+    Demostramos entonces (condici\'on I-II) que $inf(A)+inf(B) = inf (A+B)$.
+    
+  \item
+    Con $B=(0,1]$ se satisface $(0,2] + (0,1] = (0,3]$.
+    $inf(C) = inf(A) = inf(B) = 0$ t $sup(C) = 3$, $sup(A) = 2$, $sup(B)=1$.
+            Trivialmente se cumplen las igualdades de la parte anterior.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \item
+    Usamos la condici\'on S-II.
+    Para demostrar que $\alpha sup(A)$ es el supremo de $\alpha A$, Primero
+    probamos que es cota superior.
+
+    Para cualquier $x \in A$, $x \leq sup(A)$, por tanto para cuaquier
+    $y \in \alpha A$, como $y = \alpha x$ para alg\'un $x\in A$, tenemos
+    (multiplicando ambos lados de la desigualdad, observando que $\alpha >0$)
+    que $y = \alpha x \leq \alpha sup(A)$.
+
+    Por otra parte, se verifica: 
+    $$\forall \delta > 0, \: \exists a \in A \: \text{ tal que }
+    \: sup(A)-a < \frac{\delta}{\alpha} $$
+
+    Por tanto, dado un $y \in \alpha A$, como $y=\alpha x$ con $x \in A$,
+    se satisface (multiplicando la desigualdad anterior por $\alpha$):
+    
+    $$\forall \delta > 0, \: \exists y \in \alpha A \: \text{ tal que }
+    \: (\alpha sup(A))-y < \delta $$
+    
+    
+  \item
+    Análogo al caso anterior.
+  \end{enumerate}
+\end{enumerate}
+
+
+\end{document}

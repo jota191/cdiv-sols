@@ -1,0 +1,117 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{float}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{titlesec}
+
+\renewcommand{\o}{\circ}
+\newcommand{\qed}{\blacksquare}
+
+% elimina newline despues de \section:
+\titleformat{\section}[runin]
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}      
+
+
+\headsep17mm
+\topmargin-1cm
+\hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
+1.5cm \evensidemargin 1.5cm \textheight 22.5cm
+
+
+
+
+\begin{document}
+
+\vspace{0,3cm}
+
+\begin{center}
+{\bf \Large Resoluciones seleccionadas, semana 03}
+\end{center}
+
+
+\vspace{0,3cm}
+
+\section*{1.1.f}\emph{Probar $\sum_{i=1}^n i(i!)= (n + 1)! - 1$}
+
+\noindent
+\emph{Solución:}
+
+\begin{itemize}
+\item Paso base:
+  
+  Con $n=1$ tenemos $\sum_{i=1}^1 i(i!)=1=(1+1)! -1$.
+  \footnote{Nótese que tomamos $1$ como base para no tener el caso
+    de la suma degenerada, pero podíamos comenzar por $0$ perfectamente.
+  En general $\sum_{i=1}^0 f(i) = 0$}
+
+\item Paso inductivo
+
+  \begin{itemize}
+  \item HI: Para $h\in \mathbb{N}$, se satisface
+    $\sum_{i=1}^h i(i!)= (h + 1)! - 1$
+  \item TI: Deducimos $\sum_{i=1}^{h+1} i(i!)= ((h + 1) + 1)! - 1$
+  \end{itemize}
+\emph{Demostración:}
+
+\begin{align*}
+  \sum_{i=1}^{h+1} i(i!)
+  &= \sum_{i=1}^{h} i(i!) + (h+1)(h+1)! &\\
+  &= (h+1)! - 1 + (h+1)(h+1)! {\text{ (por hipótests) } } &\\
+  &= (h+1)! + (h+1)(h+1)! - 1 &\\
+  &= (h+2)(h+1)! - 1 &\\
+  &= (h+2)! - 1 &\\
+  &= ((h + 1) + 1)! - 1  \qed &\\
+\end{align*}
+  
+\end{itemize}
+
+
+
+
+
+\section*{1.2.a}
+\emph{Probar $(1+x)^n \geq 1+nx \quad \forall \, x>-1,
+  \forall \, n \in \mathbb{N}$ }
+
+\noindent
+\emph{Solución:}
+
+\begin{itemize}
+\item Paso base:
+  
+  Con $n=0$ tenemos trivialmente $(1+x)^0 \geq 1+0x$
+  (ambas expresiones valen $1$).
+  
+\item Paso inductivo
+
+  \begin{itemize}
+  \item HI: Para $h \in \mathbb{N}$ se cumple
+    $(1+x)^h \geq 1+hx \quad \forall \, x>-1$
+  \item TI: $(1+x)^{h+1} \geq 1+(h+1)x \quad \forall \, x>-1$
+  \end{itemize}
+\emph{Demostración:}
+
+\begin{align*}
+  (1+x)^{h+1} &= (1+x)^{h+1} &\\
+  &=    (1+x)^{h}(1+x) &\\
+  &\geq (1+hx)(1+x) \qquad \text{ (por hipótesis, y porque $1+x>0$)}&\\
+  &=    1+hx+x+hx^2 &\\
+  &=    1+(h+1)x+hx^2 &\\
+  &\geq 1+(h+1)x \qed \qquad \text{(porque $hx^2>0$)} &\\
+\end{align*}
+  
+\end{itemize}
+
+
+\end{document}
