@@ -1,0 +1,115 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{float}
+\usepackage{enumitem}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{titlesec}
+
+\renewcommand{\o}{\circ}
+\newcommand{\qed}{\blacksquare}
+\newcommand{\R}{\mathbb{R}}
+
+% elimina newline despues de \section:
+\titleformat{\section}[runin]
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}      
+
+
+\headsep17mm
+\topmargin-1cm
+\hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
+1.5cm \evensidemargin 1.5cm \textheight 22.5cm
+
+
+
+
+\begin{document}
+
+\vspace{0,3cm}
+
+\begin{center}
+{\bf \Large Resoluciones seleccionadas, semana 05}
+\end{center}
+
+
+\vspace{0,3cm}
+
+\section*{2.8}\emph{}%TODO escribir letra
+\begin{enumerate}
+\item
+  Consideramos $K \in \R$, tal que $\forall x \in [a,b], K > |f(x)|$.
+  Observemos que $K$ existe porque $f$ es integrable (ver te\'orico,
+  ser acotada es una hip\'otesis requerida para una funci\'on ser
+  integrable de Riemann).
+
+  Entonces, asumiendo $y>x$ sin p\'erdida de generalidad:
+
+  \begin{align*}
+    K | y - x | & = \int_{x}^{y}{K \D{x}}  & &\\
+    & \geq \int_{x}^{y}{|f(x)| \D{x}} & &\mbox{ \{ por comparaci\'on\}}\\
+    & \geq \left| \int_{x}^{y}{f(x) \D{x}} \right|
+    & &\mbox{ \{ propiedad de la integral \}}\\
+    &= \left| \int_{0}^{y}{f(x) \D{x}} - \int_{0}^{x}{f(x) \D{x}} \right|
+    & & \mbox{ \{ propiedad de la integral \}} \\
+    &= \left|  F(x) - F(y) \right| & & \mbox{ \{ definici\'on de $F$ \}}
+  \end{align*}
+
+\item
+  Consideramos el intervalo $[a_i, a_{i+1}]$.
+  Tenemos que
+  $K(a_{i+1} - a_i) = K|a_{i+1} - a_i| > |f(a_{i+1}) - f(a_i)| =
+  |f(a_i)) - f(a_{i+1})|$. (La desigualdad vale por la hip\'otesis de que $f$
+  es Lipschitz).
+
+  Por otra parte $f(a_i) - inf(f,[a_i, a_{i+1}])>0$
+  por definici\'on de \'infimo.
+
+  Aplicando la desigualdadd triangular,
+  $|f(a_i) - f(a_{i+1})| + |f(a_i) - inf(f,[a_i, a_{i+1}])|
+  > | f(a_i)- inf(f,[a_i, a_{i+1}])| = f(a_i)- inf(f,[a_i, a_{i+1}])$.
+
+  Por tanto, por transitividad
+  $K(a_{i+1} - a_i) > f(a_i)- inf(f,[a_i, a_{i+1}])$. Reordenando obtenemos lo
+  pedido. Para la segunda inecuaci\'on el procdimiento es an\'alogo.
+
+  Observemos que sumando miembro a miembro las dos inecuaciones
+  se puede concluir que:
+  $(sup(f,[a_i, a_{i+1}]) - inf(f,[a_i, a_{i+1}]) \leq 2K (a_{i+1} -a_i)$.
+  
+  Vamos a probar que $f: [a,b] \rightarrow \R$ lipschiziana es integrable.
+
+  Como se vi\'o en el te\'orico, una condici\'on necesaria para $f$ integrable
+  es que existan particiones tales que las sumas superiores e inferiores
+  difieran en menos de $\epsilon$, para cualquier $\epsilon>0$.
+  
+  Consideramos una partici\'on equiespaciada $P_n$, del intervalo $[a,b]$.
+  Tenemos:
+  \begin{align*}
+    S^{*}(f,P_n) - S_{*}(f,P_n) &
+    = \sum_{i=0}^{i-1}{sup(f,[a_i, a_{i+1}]) (a_{i+1} -a_{1})}
+    - \sum_{i=0}^{i-1}{inf(f,[a_i, a_{i+1}]) (a_{i+1} -a_{1})}& &\\
+    &= \sum_{i=0}^{i-1}{(sup(f,[a_i, a_{i+1}]) - inf(f,[a_i, a_{i+1}]))
+      (a_{i+1} -a_{1})}& &\\
+    &= \sum_{i=0}^{i-1}{2K \frac{b-a}{n} \frac{b-a}{n}}& &\\
+    &= 2Kn \frac{b-a}{n} \frac{b-a}{n}& &\\
+    &= \frac{2K (b-a)^2}{n} & &\\
+  \end{align*}
+  
+  Entonces, dado $\epsilon$ alcanza con tomar $n$ tal que
+  $ n > \frac{2K (b-a)^2}{\epsilon}$.
+\item
+  Supongamos lo contrario, consideramos $x_0 \in [a,b]$ tal que $f(x_0)>0$.
+\end{enumerate}
+
+  
+\end{document}
