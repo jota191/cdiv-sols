@@ -22,7 +22,7 @@ all : 1 2 3 4 5
 
 
 5 : Sol05.tex 
-	$(TEX) Sol01.tex
+	$(TEX) Sol05.tex
 
 
 .PHONY: clean
