@@ -71,16 +71,16 @@
   |f(a_i)) - f(a_{i+1})|$. (La desigualdad vale por la hip\'otesis de que $f$
   es Lipschitz).
 
-  Por otra parte $f(a_i) - inf(f,[a_i, a_{i+1}])>0$
+  Por otra parte $f(a_{i+1}) - inf(f,[a_i, a_{i+1}])>0$
   por definici\'on de \'infimo.
 
   Aplicando la desigualdadd triangular,
-  $|f(a_i) - f(a_{i+1})| + |f(a_i) - inf(f,[a_i, a_{i+1}])|
-  > | f(a_i)- inf(f,[a_i, a_{i+1}])| = f(a_i)- inf(f,[a_i, a_{i+1}])$.
+  $|f(a_i) - f(a_{i+1})| + |f(a_{i+1}) - inf(f,[a_i, a_{i+1}])|
+  \geq | f(a_i)- inf(f,[a_i, a_{i+1}])| = f(a_i)- inf(f,[a_i, a_{i+1}])$.
 
-  Por tanto, por transitividad
+  Por tanto, por transitividad del orden
   $K(a_{i+1} - a_i) > f(a_i)- inf(f,[a_i, a_{i+1}])$. Reordenando obtenemos lo
-  pedido. Para la segunda inecuaci\'on el procdimiento es an\'alogo.
+  pedido. Para la segunda inecuaci\'on el procedimiento es an\'alogo.
 
   Observemos que sumando miembro a miembro las dos inecuaciones
   se puede concluir que:
@@ -88,7 +88,7 @@
   
   Vamos a probar que $f: [a,b] \rightarrow \R$ lipschiziana es integrable.
 
-  Como se vi\'o en el te\'orico, una condici\'on necesaria para $f$ integrable
+  Como se vi\'o en el te\'orico, una condici\'on suficiente para $f$ integrable
   es que existan particiones tales que las sumas superiores e inferiores
   difieran en menos de $\epsilon$, para cualquier $\epsilon>0$.
   
