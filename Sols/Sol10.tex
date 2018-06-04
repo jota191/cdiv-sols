@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{float}
+\usepackage{enumitem}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{titlesec}
+
+\renewcommand{\o}{\circ}
+\newcommand{\qed}{\blacksquare}
+\newcommand{\R}{\mathbb{R}}
+
+% elimina newline despues de \section:
+\titleformat{\section}[runin]
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}      
+
+
+\headsep17mm
+\topmargin-1cm
+\hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
+1.5cm \evensidemargin 1.5cm \textheight 22.5cm
+
+
+
+
+\begin{document}
+
+\vspace{0,3cm}
+
+\begin{center}
+{\bf \Large Resoluciones seleccionadas, semana 10}
+\end{center}
+
+
+\vspace{0,3cm}
+
+\section*{1.6.d}\emph{}
+
+\noindent
+Para este ejercicio podr\'iamos considerar funciones
+trigonom\'etricas, que intuitivamente ya manejamos.
+Otro ejemplo no trivial es definir una funci\'on como la de [REF],
+$\{ \} : \mathbb{R}\rightarrow\mathbb{R}$ donde $\{x\}$ es la distancia
+de $x$ al entero mas pr\'oximo.
+Es f\'acil probar que esta funci\'on est\'a acotada
+($0\leq\{x\}\leq\frac{1}{2}$). y ver que intuitvamente no tiene l\'imite
+infinito. Formalicemos \'esto.
+
+\noindent
+Observeos que la definici\'on de $\displaystyle{\lim_{x\rightarrow \infty}
+  \{x\}= l}$.
+es que dado $\epsilon > 0$ podemos encontrar
+$K\in\mathbb{R}$ tal que si $x > K$ entonces $|x-l|<\epsilon$.
+M\'as precisamente:
+$$
+\forall \epsilon>0, \exists K\in\mathbb{R} \: : \: \forall x>K, \: |\{x\}-l|<
+\epsilon
+$$
+
+\noindent
+La {\bf negaci\'on} de esta proposici\'on es 
+
+$$
+\exists \epsilon>0, \forall K\in\mathbb{R} / \exists x>K |\{x\}-l|>\epsilon
+$$
+
+\noindent
+Es decir, podemos dar un $\epsilon$ tal que sin importar que tan grande sea
+$K$, podemos encontrar $x>K$ con $|\{x\}-l|>\epsilon$.
+
+\noindent
+Tomamos $\epsilon=\frac{1}{4}$. Dado $K$, elegimos $x_0\in\mathbb{N}$ con
+$x_0>K$ (Podemos porque ya demostramos que los naturales no est\'an acotados).
+
+\noindent
+Tomamos $x_1 = x_0 + \frac{1}{2}$.
+Por la desigualdad trialgular:
+
+$$
+|\{x_1\} - l| + |l - \{x_2\}| \geq |\{x_1\} - \{x_2\}| = \frac{1}{2}
+$$
+
+\noindent
+Pero entonces tenemos dos reales positivos que suman $\frac{1}{2}$, por lo que
+uno de ellos debe valer por lo menos $\frac{1}{4}$, como quer\'iamos.
+
+
+
+\end{document}
