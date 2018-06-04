@@ -27,7 +27,7 @@ all : 1 2 3 4 5 10
 10 : Sol10.tex
 	$(TEX) Sol10.tex
 
-10 : Sol11.tex
+11 : Sol11.tex
 	$(TEX) Sol11.tex
 
 .PHONY: clean
