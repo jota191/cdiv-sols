@@ -30,7 +30,7 @@
 \hoffset -1.5cm \voffset -1cm \textwidth 17cm \oddsidemargin
 1.5cm \evensidemargin 1.5cm \textheight 22.5cm
 
-
+\setlength\parindent{0cm}
 
 
 \begin{document}
@@ -50,22 +50,26 @@
 Primero vamos a mostrar la continuidad en $0$.
 
 
-$$\displaystyle{\lim_{x\rightarrow 0} f(x)
-  = \lim_{x\rightarrow 0} x^2 \sin \left(\frac{1}{x}\right)= 0 = f(0)}
+$$
+\displaystyle{\lim_{x\rightarrow 0} f(x)
+  = \lim_{x\rightarrow 0} x^2 \sin \left(\frac{1}{x}\right)= 0\times
+  \text{acotado} = f(0)}
 $$
 
 
 \noindent
+
 Veamos que en $[0,a]$ la funci\'on no es mon\'otona.
 Sabemos que dado $k \in \mathbb{N}$, $\sin(2\pi K)=0$, y
 $\sin(2 \pi K + \frac{\pi}{2}) = 1$.
-Por lo tanto si consideramos la funci\'on $\sin(\frac{1}{x})$, \'esta vale en
-$\frac{1}{2\pi K}$, y en
-$\frac{1}{2 \pi K + \frac{\pi}{2}}$ $0$ y $1$ respectivamente.
+Por lo tanto si consideramos la funci\'on $\sin(\frac{1}{x})$, \'esta vale
+$0$ en
+$\displaystyle{\frac{1}{2\pi K}}$, y  $1$ en
+$\displaystyle{\frac{1}{2 \pi K + \frac{\pi}{2}}}$.
 
 \noindent
 Dado $a \in \mathbb{R}$ podemos encontrar $K$ lo suficientemente grande
-para que $\frac{1}{2\pi K} \in [0,a]$.
+para que $\displaystyle{\frac{1}{2\pi K} \in [0,a]}$.
 
 \noindent
 N\'otese que
@@ -74,17 +78,19 @@ $$0 < \frac{1}{2\pi (K+1)} <
 
 \noindent
 Pero entonces por el razonamiento anterior
-$f$ vale 0 en $\frac{1}{2\pi (K+1)}$ y $\frac{1}{2\pi K}$,
+$f$ vale 0 en $\displaystyle{\frac{1}{2\pi (K+1)}}$ y
+$\displaystyle{\frac{1}{2\pi K}}$,
 (los $x$ de m\'as a la izquierda y derecha) y
-$(\frac{1}{2 \pi K + \frac{\pi}{2}})^2 > 0$ en
-$\frac{1}{2 \pi K + \frac{\pi}{2}}$ (el del medio). Por lo tanto $f$
-no es mon\'otona.
+$\displaystyle{\left( \frac{1}{2 \pi K + \frac{\pi}{2}}\right)^2 > 0}$ en
+$\displaystyle{\frac{1}{2 \pi K + \frac{\pi}{2}}}$ (el del medio).
+Por lo tanto $f$ no es mon\'otona.
 
 \noindent
-Podemos buscar $K$ expl\'icitamente, quer\'iamos que $ \frac{1}{2\pi K}< a$
+Podemos buscar $K$ expl\'icitamente, quer\'iamos que
+$ \displaystyle{\frac{1}{2\pi K}< a}$
 por lo tanto, despejando necesitamos tomar $K$ entero tal que
-$ K >  \frac{1}{2\pi a}$, lo cual es posible nuevamente gracias a que
-los naturales no est\'an acotados.
+$\displaystyle{ K >  \frac{1}{2\pi a}}$,
+lo cual es posible nuevamente gracias a que los naturales no est\'an acotados.
 
 
 

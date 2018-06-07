@@ -3,7 +3,6 @@ TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 
 .PHONY: all view
 
-all : 1 2 3 4 5 10
 
 1 : Sol01.tex 
 	$(TEX) Sol01.tex
